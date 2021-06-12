@@ -26,14 +26,18 @@ let num = new MessageButton()
     .setEmoji("💬") 
     .setStyle("green");
 
+let link = new MessageButton() 
+    .setUrl(`${memeUrl}`)
+    .setLabel("Meme Link")
+    .setStyle("url")
+
 			embed.setTitle(`${memeTitle}`);
 			embed.setURL(`${memeUrl}`);
 			embed.setColor('RANDOM');
 			embed.setImage(memeImage);
-		embed.setFooter(`👍 ${memeUpvotes} 💬 ${memeNumComments}`);
-			message.channel.send({
+                        message.channel.send({
                         embed: embed, 
-                        buttons: [up, num]
+                        buttons: [up, num, link]
                         }) 
 		})
 		.catch(console.error);
