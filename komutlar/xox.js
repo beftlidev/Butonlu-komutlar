@@ -17,5 +17,5 @@ exports.conf = {
 aliases: [] 
 } 
 exports.help = {
-name: "" 
+name: "xox" 
 } 
