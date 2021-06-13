@@ -27,7 +27,7 @@ let num = new MessageButton()
     .setStyle("green");
 
 let link = new MessageButton() 
-    .setUrl(`${memeUrl}`)
+    .setURL(`${memeUrl}`)
     .setLabel("Meme Link")
     .setStyle("url")
 
