@@ -1,9 +1,9 @@
 const Discord = require('discord.js')
 const db = require('croxydb')
     exports.run = (client, message, args) => {
-        let not1 = db.fetch(`codemarefinot1_${message.author.id}`)
-        let not2 = db.fetch(`codemarefinot2_${message.author.id}`)
-        let not3 = db.fetch(`codemarefinot3_${message.author.id}`)
+        let not1 = db.fetch(`not1_${message.author.id}`)
+        let not2 = db.fetch(`not2_${message.author.id}`)
+        let not3 = db.fetch(`not3_${message.author.id}`)
 
 const 1 = new Discord.MessageEmbed() 
 .setTitle("1.Notun")
