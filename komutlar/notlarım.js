@@ -11,15 +11,17 @@ const db = require('croxydb')
 const e1 = new Discord.MessageEmbed() 
 .setTitle("1.Notun")
 .setDescription(`${not1 || "<a:bulut:763614153826107393> Veri yok"}`) 
-.serColor("GREEN")
+.setColor("GREEN")
 
 const e2 = new Discord.MessageEmbed() 
 .setTitle("2.Notun")
 .setDescription(`${not2 || "<a:bulut:763614153826107393> Veri yok"}`) 
+.setColor("GREEN") 
 
 const e3 = new Discord.MessageEmbed() 
 .setTitle("3.Notun")
 .setDescription(`${not3 || "<a:bulut:763614153826107393> Veri yok"}`) 
+.setColor("GREEN") 
 
 var pages = [e1, e2, e3]
     disbutpages.pages(client, message, pages, 300000, disbut, "red", "844468549417697350", "844468548079321089", "844468546930606100")
