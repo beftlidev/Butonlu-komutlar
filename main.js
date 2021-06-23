@@ -8,3 +8,13 @@ client.on("message", async (msg, member, guild) => {
     }
   }
 });
+
+client.on("clickButton", async (button) => {
+    var guild = client.guilds.cache.get("752164000418234448")
+    if(button.id === "accept") {
+        button.message.edit(button.message.embeds[0].setColor("GREEN")).then(m => m.pin())
+    }
+    if(button.id === "deny") {
+        button.message.edit(button.message.embeds[0].setColor("RED"))
+    }
+})
