@@ -1,30 +1,36 @@
-const Discord = require('discord.js');
-const db = require('croxydb');
+const Discord = require("discord.js")
+const d = require("discord-buttons")
 
-exports.run = (client, message, args) => {
+exports.run = async (client, message, args) => {
 
-    let oneri = args.slice(0).join(" ");
-  const kufur = ["oç", "amk", "ananı sikiyim", "ananıskm", "piç", "amk", "amsk", "sikim", "sikiyim", "orospu çocuğu", "piç kurusu", "kahpe", "orospu", "mal", "sik", "yarrak", "am", "amcık", "amık", "yarram", "sikimi ye", "mk", "mq", "aq", "ak", "amq", "anan", "karı","bok",];
-        if (kufur.some(word => kufur.includes(word))) {
-          message.inlineReply('**Önerinizde küfür belirtemessin!**')
-  return;
-        }
-  if(!lara) return message.inlineReply(' **Bir öneri belirtmelisiniz.**')
-  message.inlineReply('**Öneriniz başarı ile gönderildi** \n**Öneriniz** = ```'+lara+'```')
+        var button1 = new d.MessageButton()
+        .setEmoji("804253394326913085")
+        .setLabel("Onayla")
+        .setStyle("blurple")
+        .setID("accept")
+        var button2 = new d.MessageButton()
+        .setEmoji("855750448711467058")
+        .setLabel("Reddet")
+        .setStyle("blurple")
+        .setID("deny")
+        var row = new d.MessageActionRow()
+        .addComponents([button1, button2]);
+        var suggestionChannel = client.channels.cache.get("");
 
-  let gonde = new Discord.MessageEmbed()
-  .setColor('RANDOM')
-  .setTitle('<a:cooldoge:763251727700590604> **Bir öneri var!** <a:cooldoge:763251727700590604>')
-  .setDescription(`<a:yubbi:774337288451653663> **Öneren kişi** : ${message.author.username} 
-<a:diamond:754667451022704690> **Öneri**: ${oneri}`)
-  client.users.cache.get('753842258457002036').send(gonde)
-  client.channels.cache.get('795203361606860820').send(gonde)
-  };
+        const suggestion = new MessageEmbed().setColor("YELLOW")
+        .setAuthor(message.author.tag, message.author.avatarURL())
+        .setDescription(args.slice(2).join(" "))
+        .setFooter(message.author.id)
+        const reply = new MessageEmbed().setColor("YELLOW")
+        .setDescription("<:tik:804253394326913085> Öneriniz moderatörlere gönderildi, en yakın zamanda cevaplanacak!")
 
+        suggestionChannel.send({embed: suggestion, component: row})
+        message.channel.send(reply)
+
+} 
 exports.conf = {
 aliases: [] 
-};
-
+}
 exports.help = {
-  name: 'öneri',
-}; 
+name: "öneri" 
+} 
