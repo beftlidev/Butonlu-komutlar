@@ -15,7 +15,7 @@ exports.run = async (client, message, args) => {
         .setID("deny")
         var row = new d.MessageActionRow()
         .addComponents([button1, button2]);
-        var suggestionChannel = client.channels.cache.get("");
+        var suggestionChannel = client.channels.cache.get("857306506692788225");
 
         const suggestion = new MessageEmbed().setColor("YELLOW")
         .setAuthor(message.author.tag, message.author.avatarURL())
